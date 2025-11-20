@@ -1,0 +1,19 @@
+[package]
+name = "fft_bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rustfft = "6.2"
+scirs2 = "0.1.0-rc.2"
+num-complex = "0.4"
+criterion = "0.5"
+
+[[bench]]
+name = "fft_comparison"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
